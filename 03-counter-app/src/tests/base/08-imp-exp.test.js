@@ -25,7 +25,14 @@ describe('Pruebas en funciones de heroes 08', () => {
     
     test('deve retornar un array con los heroes', ()=>{
         const owner = 'DC';        
-        const heroe = getHeroesByOwner(owner-);
-        expect(heroe).toBe(undefined);
+        const heroes = getHeroesByOwner(owner);
+        const heroesData = heroes.filter( h => h.owner===owner);
+        expect(heroes).toEqual(heroesData);
+    });
+    
+    test('deve retornar un array con lenght 2', ()=>{
+        const owner = 'Marvel';        
+        const heroes = getHeroesByOwner(owner);
+        expect(heroes.length).toBe(2);
     });
 })
