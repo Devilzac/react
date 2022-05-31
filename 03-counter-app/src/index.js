@@ -20,10 +20,12 @@ ReactDOM.render(  <CounterApp value={123} />, divRoot);
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import CounterApp from './CounterApp';
+//import CounterApp from './CounterApp';
 import './index.css';
+import PrimeraApp from './PrimeraApp';
 
 const container = document.getElementById('app');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 
-root.render(  <CounterApp value={123} />);
+root.render(  <PrimeraApp saludo='hola' />);
+//root.render(  <CounterApp value={123} />);
