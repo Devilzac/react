@@ -22,6 +22,6 @@ const [counter, setCounter] = useState(value);
 }
 
 CounterApp.propTypes = {
-    value: propTypes.number.isRequired,
+    value: propTypes.number,
 }
 export default CounterApp;
