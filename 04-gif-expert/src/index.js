@@ -7,7 +7,6 @@ import { GifExpertApp } from './components/GifExpertApp';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
-        <GifExpertApp />,
-        <App />
+        <GifExpertApp />
     </>
 );
