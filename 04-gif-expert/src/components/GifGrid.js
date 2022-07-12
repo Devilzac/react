@@ -4,7 +4,8 @@ import { getGifs } from '../helpers/getGifs';
 
 export default function GifGrid({category}) {
 
-const [images, setImages]= useState([]);
+  const [images, setImages]= useState([]);
+  const [is, setImages]= useState([]);
 
 const getImages = async()=>{
   const newImages = await getGifs(category);
