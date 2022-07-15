@@ -20,6 +20,12 @@
   flex-direction: column;
   height: 0%;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 10px;
   
+}
+
+.card-grid img{
+  object-fit: cover;
+  width: 400px;
+  height: 200px;
 }
