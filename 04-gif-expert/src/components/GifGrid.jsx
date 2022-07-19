@@ -3,7 +3,7 @@ import { GifGridItem } from './GifGridItem';
 import { useFetchGifs } from '../hooks/useFetchGifs';
 //import { getGifs } from '../helpers/getGifs';
 
-export default function GifGrid({category}) {
+export function GifGrid({category}) {
 
   const { images, isLoading} = useFetchGifs(category);
   console.log({images, isLoading, category});
