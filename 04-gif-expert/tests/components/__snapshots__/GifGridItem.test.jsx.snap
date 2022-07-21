@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas de <GifGridItem /> debe de ser igual al snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="dr strange"
+      height="200"
+      src="google.com"
+      width="400"
+    />
+    <p>
+      dr strange
+    </p>
+  </div>
+</div>
+`;
