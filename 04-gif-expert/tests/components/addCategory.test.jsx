@@ -9,4 +9,15 @@ describe('puebas con componente <addCategory/>', () => {
         fireEvent.input(input, { target:{value: name} });
         expect( input.value ).toBe(name)
      })
+
+     test('Debe de llamar a onNewCategory si el imput tiene un valor', () => {         
+        const inputValue = "Saitama";
+        //todo
+            render(<AddCategory onNewCategory={ ()=>{} }/>);
+            const input = screen.getByRole("textbox");
+            const form = screen.getByRole("form");
+            fireEvent.input(input, {target:{value: inputValue}});
+            fireEvent.submit(form);
+            expect(input.value).toBe("");
+        })
 });
