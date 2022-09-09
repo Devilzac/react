@@ -17,7 +17,6 @@ export const useFetch = (url) => {
         });
 
         const resp = await fetch(url).then((r)=>{
-            console.log(r);
             return r;
         })
         .catch((error)=>{
@@ -29,7 +28,6 @@ export const useFetch = (url) => {
             return error;
         });
         const data = await resp.json();
-        console.log("json: ", data);
         setstate({
             data,
             isLoading:false,
