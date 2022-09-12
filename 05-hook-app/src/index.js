@@ -11,10 +11,11 @@ import './index.css';
 //import { MultipleCustomHooks } from './03-examples/MultipleCustomHooks';
 //import { FocusScreen } from './04-useRef/FocusScreen';
 //import { Layout } from './05-UseLayoutEffect/Layout';
-
 //import { Memorize } from './06-memos/Memorize';
+import './08-useReducer/intro-reducer';
+import { TodoApp } from './08-useReducer/TodoApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Padre />
+    <TodoApp />
 );
