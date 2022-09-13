@@ -20,7 +20,7 @@ export const TodoAdd = memo(({onNewTodo}) => {
             done:false,
             description,
         }
-
+        
         onNewTodo(newTodo)
         onResetForm();
     }

@@ -2,7 +2,7 @@ import React, {memo} from 'react'
 import { TodoItem } from './TodoItem'
 
 export const TodoList = memo(({todos = []}) => {
-    
+  
   return (
     <>
         <ul className='list-group'>
