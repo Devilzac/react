@@ -7,7 +7,6 @@ export const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
             <Link className="navbar-brand" to="/">useContext</Link>
-            <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <NavLink className={({isActive})=> `nav-link ${isActive ? 'active':'' }`} to="/login">Login</NavLink>
@@ -16,7 +15,6 @@ export const Navbar = () => {
                     <NavLink className={({isActive})=> `nav-link ${isActive ? 'active':'' }`} to="/about">About</NavLink>
                 </li>
             </ul>
-            </div>
         </div>
         </nav>
     </>
