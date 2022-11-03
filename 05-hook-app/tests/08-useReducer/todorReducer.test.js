@@ -35,41 +35,31 @@ describe('pruebas en todoTeducer', () => {
 
     test('debe de borrar un todo', () => {
         
-        const actionAdd = {
-            type: '[TODO] add Todo',
-            payload: {
-                id:2,
-                description:'nuevo todo',
-                done: false
-            }
-        };
-
         const actionRemove = {
             type: '[TODO] remove Todo',
-            payload: {
-                id:2,
-                description:'nuevo todo',
-                done: false
-            }
+            payload: 1
         };
-
-        
-        const newState = todoReducer(initialState, actionAdd);
-        console.log(newState)
-        expect(newState.length).toBe(2);
-
-
 
         const newState2 = todoReducer(initialState, actionRemove);
         
-        expect(newState2.length).toBe(1);
-        
-        expect(newState).toContain(actionAdd.payload);
+        expect(newState2.length).toBe(0);
 
     });
 
     test('debe de realizar el toggle de el todo (done= true)', () => {
+        const action = {
+            type: '[TODO] Toggle Todo',
+            payload: 1
+        };
+
         
+        const newState = todoReducer(initialState, action);
+        expect(newState[0].done).toBe(true);
+
+        const newState2 = todoReducer(newState, action);
+        expect(newState2[0].done).toBe(false);
+
+
     });
     
 
