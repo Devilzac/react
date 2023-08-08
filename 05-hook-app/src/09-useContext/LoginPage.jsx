@@ -8,7 +8,7 @@ export const LoginPage = () => {
   return (
     <>
       <h2>Login</h2>
-      <pre>
+      <pre aria-label="pre">
         {
           JSON.stringify(user, null, 3)
         }
