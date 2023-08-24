@@ -5,7 +5,7 @@ export const HeroCard = ({id,superhero,first_appearance, alter_ego, characters})
     const imgPath = `/src/assets/heroes/${id}.jpg`;
   return (
     <>
-        <div className="col-3 p-0 card" key={id}>
+        <div className="col-3 p-0 card animate__animated animate__fadeIn" key={id}>
             <img className="card-img-top" src={imgPath} alt={superhero} />
             
             <div className="card-body">
