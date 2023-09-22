@@ -5,21 +5,43 @@ export const HeroCard = ({id,superhero,first_appearance, alter_ego, characters})
     const imgPath = `/src/assets/heroes/${id}.jpg`;
   return (
     <>
-        <div className="col-3 p-0 card animate__animated animate__fadeIn" key={id}>
-            <img className="card-img-top" src={imgPath} alt={superhero} />
-            
-            <div className="card-body">
-                <h5 className="card-title">{superhero}</h5>
-                <div className="card-text">
-                    {
-                        (alter_ego !== characters) && (<p>{characters}</p>)
-                    }
-                </div> 
-                <p className="card-text"> 
+
+        <div className="col animate__animated animate__fadeIn">
+            <div className="card">
+
+                <div className="row no-gutters">
                     
-                   <small className="text-muted">{first_appearance}</small>
-                </p>
-                <Link to={`/hero/${ id }`} className="btn btn-primary">Mas...</Link>
+                    <div className="col-4">
+                        <img src={ imgPath } className="card-img" alt={ superhero } />
+                    </div>
+
+                    <div className="col-8">
+
+                        <div className="card-body">
+
+                            <h5 className="card-title">{ superhero }</h5>
+                            <p className="card-text">{ alter_ego }</p>
+
+                            { 
+                                ( alter_ego !== characters ) && <p>{ characters }</p>
+                            }
+
+                            <p className="card-text">
+                                <small className="text-muted">{ first_appearance }</small>
+                            </p>
+
+                            <Link to={`/hero/${ id }`}>
+                                Más..
+                            </Link>
+
+                            
+                        </div>
+
+                    </div>
+
+
+                </div>
+
             </div>
         </div>
     </>
