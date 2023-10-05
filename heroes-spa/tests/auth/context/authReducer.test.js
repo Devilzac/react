@@ -7,7 +7,6 @@ describe('Puebas en authReducer', () => {
     test('Debe retornar el estado por defecto', () => { 
         const defaultState = {logged:false};
         const state =  authReducer(defaultState, {});
-        console.log(defaultState)
         expect(state).toBe(defaultState);
 
 
