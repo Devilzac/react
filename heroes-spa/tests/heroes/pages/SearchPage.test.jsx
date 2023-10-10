@@ -2,7 +2,6 @@ const { render, screen, getByRole, fireEvent } = require("@testing-library/react
 const { MemoryRouter,useNavigate } = require("react-router-dom")
 const { SearchPage } = require("../../../src/heroes/pages/SearchPage")
 const { default: queryString } = require("query-string")
-const { useForm } = require("../../../src/hooks/useForm")
 
 
 const mockedUseNavigate = jest.fn();
