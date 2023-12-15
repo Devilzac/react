@@ -1,17 +1,17 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Link as RouterLink } from "react-router-dom"
 import { Google } from "@mui/icons-material"
-import { Button, Grid, Link, TextField, Typography } from "@mui/material"
+import { Alert, Button, Grid, Link, TextField, Typography } from "@mui/material"
 import { RegisterPage } from "./RegisterPage"
 import { AuthLayout } from "../layout/AuthLayout"
-import { checkingAuthentication, startGoogleSignIn } from "../../store/auth/thunks"
+import { checkingAuthentication, startGoogleSignIn, startLoginWithEmailAndPassword } from "../../store/auth/thunks"
 import { useForm } from "../../hooks/useForm"
 import { useMemo } from "react"
 
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
-  const { status } = useSelector( state => state.auth );
+  const { status, errorMessage} = useSelector( state => state.auth );
 
   const { email, password, onInputChange, formState } = useForm({
     email: 'shane199274@gmail.com',
@@ -19,10 +19,10 @@ export const LoginPage = () => {
   });
   const isAuthenticating = useMemo( ()=> status === 'checking', [status] )
   console.log("isAuthenticating", isAuthenticating);
-  const onSubmit = (event)=>{
+  const onSubmitLogin = (event)=>{
     event.preventDefault();
-    console.log({ email, password});
-    dispatch(checkingAuthentication());
+    console.log("tt:", { email, password});
+    dispatch(startLoginWithEmailAndPassword({ email, password}));
   }
   const onGoogleSignIn = ()=>{
       console.log('onGoogleSignIn') 
@@ -32,7 +32,7 @@ export const LoginPage = () => {
 
   return (
       <AuthLayout title='Login'>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmitLogin}>
             <Grid container>
               <Grid item xs={12} sx={{ mt:2 }}>
                 <TextField 
@@ -56,9 +56,16 @@ export const LoginPage = () => {
                   value={password}
                   onChange={onInputChange}
                   />
-              </Grid>            
+              </Grid>    
+              <Grid item xs={12}
+                display={!!errorMessage ? '':'none'}
+                sx={{ mb:2, mt: 1 }}>               
+                  <Alert severity="error">
+                      { errorMessage }
+                  </Alert>
+                </Grid>          
 
-              <Grid container spacing={ 2 } sx={{ mb:2, mt: 1 }}>
+              <Grid container spacing={ 2 } sx={{ mt: 1 }}>
                 <Grid item xs={12} md={ 6 }>               
                   <Button variant="contained" type="submit" fullWidth disabled={ isAuthenticating } >
                       Login
